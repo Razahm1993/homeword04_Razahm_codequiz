@@ -1,13 +1,13 @@
 const questions = [
     {
       question: "Who invented JavaScript?",
-      answers: {
-        a: "Douglas Crockford",
-        b: "Sheryl Sandberg",
-        c: "Brendan Eich",
-        d :"Sandberg Douglas"
-      },
-      correctAnswer: "c"
+      answers: [
+         "Douglas Crockford",
+        "Sheryl Sandberg",
+        "Brendan Eich",
+        "Sandberg Douglas"
+      ],
+      correctAnswer: 2
     },
     {
       question: "Which one of these is a JavaScript package manager?",
@@ -32,10 +32,9 @@ const questions = [
   ];
 var Timervalue = 10
 
+const main = document.getElementById("main")
 const startButton = document.getElementById("startButton")
-const QuestionSection = document.getElementById("Question-section")
-const helloHeading = document.getElementById("helloHeading")
-const rules = document.getElementById("Rules")
+
 
 var timeRemainingsection = document.createElement("div");
 timeRemainingsection.setAttribute("style", "display:flex;");
@@ -48,8 +47,9 @@ var timeRemainingvalue = document.createElement("div");
 timeRemainingvalue.setAttribute("style", "font-size: xx-large; text-align:left;");
 
 var Qandmain = document.createElement ("div")
-var qheading = document.createElement("h2")
-var optionList = document.createElement("ul")
+//Qandmain.textContent = qheading optionList
+//var qheading = document.createElement("h2")
+//var optionList = document.createElement("ul")
 
 
 
@@ -63,19 +63,30 @@ function startGame(){
 }
 
 function renderQuestionSection() {
-        //QuestionSection.createElement("h1");
-        //QuestionSection.textContent("title for question")
+
+  console.log("renderquestion")
+
+  const main2 = document.createElement("main")
+  main2.setAttribute("class", "questionSec")
+
+ const timsec = document.createElement("section")
+ timsec.setAttribute("class","timerSection" )
+
+ 
             
 }
 
 
 function startTimer() {
+    main.remove();
     helloHeading.remove();
     rules.remove();
     startButton.remove();
     QuestionSection.appendChild(timeRemaining);
     QuestionSection.appendChild(timeRemainingvalue);
     //qheading.appendChild("hello");
+    //QuestionSection.createElement("h1");
+    //QuestionSection.textContent("title for question")
 
 
 

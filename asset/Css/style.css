@@ -5,9 +5,7 @@ header {
   background-color: black;
 }
 
-footer{
-  text-align: center;
-}
+
 .navbar {
   border-bottom: 3px;
   border-color: green;
@@ -23,6 +21,7 @@ footer{
   padding: 30px;
 }
 
+/*man section */
 
 #main {
   margin: 10px;
@@ -52,4 +51,74 @@ align-items:center;
     border-radius: 25px;
     font-size: medium; 
     border: 8px solid green;  
+}
+
+
+/* quetion for js */
+
+.questionSec{
+  margin: 10px;
+  border: 3px;
+  border-color: aquamarine;
+  border-style: double;
+  margin-top: 100px;
+  border-radius: 10px;
+  height: 30rem;
+
+}
+.timerSection{
+  padding:20px;
+  color: black;
+  border-radius: 50px;
+  font-size: xx-large; 
+  border: 8px solid green;
+  display: flex;
+  justify-content: center;
+   justify-content: space-around;
+   margin-top: 50px;
+  }
+  .qbox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   justify-items: center;
+   align-items: center;
+   margin-top: 80px;
+    
+  }
+
+  .options{
+    display: flex;
+    list-style: none;
+  }
+
+  .question{
+
+  font-size: xx-large;
+  }
+
+  .options li{
+    text-decoration: none;
+    padding: 0.8em 3em;
+    color: blanchedalmond;
+    background: #111;
+    border-radius: 25px;
+    font-size: medium; 
+    border: 8px solid green; 
+    margin:10px;
+
+  
+  }
+  .options li:hover{
+    color: black;
+    background: green;
+    border: 8px solid blanchedalmond; 
+    font-weight:bolder;  
+  }
+
+
+
+
+footer{
+  text-align: center;
 }
