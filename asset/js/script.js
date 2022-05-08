@@ -1,4 +1,4 @@
-let questionIndex = 2
+let questionIndex = 0
 
 
 const questions = [
@@ -38,25 +38,25 @@ const questions = [
 const main = document.getElementById("main")
 const intro = document.getElementById("Question-section")
 const startButton = document.getElementById("startButton")
-var Timervalue = 10
+var Timervalue = 60
 
 startButton.addEventListener("click",startGame)
 
 function startGame(){
     console.log("hello")
+    intro.remove();
     startTimer();
     renderQuestionSection();
     
 }
 function startTimer() {
-  intro.remove();
-     
-  
-  
   var timeInterval = setInterval(function () {
     if (Timervalue > 0) {
       console.log (Timervalue + ' seconds remaining');
       Timervalue--;
+      const timee11 = document.getElementById("timer1");
+      timee11.textContent = Timervalue
+      
     }
         else {
     console.log("game Over") 
@@ -66,6 +66,7 @@ function startTimer() {
   }, 1000);
     }
 
+
 function renderQuestionSection() {
 
   console.log("renderquestion")
@@ -74,6 +75,9 @@ function renderQuestionSection() {
 
  const questSec = document.createElement("section");
  questSec.setAttribute("class", "questionSec");
+ questSec.setAttribute("id", "questionCon");
+ 
+
 
  const timersec = document.createElement("section");
  timersec.setAttribute("class","timerSection" );
@@ -85,6 +89,7 @@ function renderQuestionSection() {
 
  const timerVal = document.createElement("div");
  timerVal.setAttribute("class", "timerbox");
+ timerVal.setAttribute("id", "timer1");
  
 
  const qbox = document.createElement("section");
@@ -122,11 +127,35 @@ timersec.append(timerTex,timerVal);
 
 qbox.append(questionB,ul);
 
-main.append(timersec,qbox);
+questSec.append(timersec,qbox);
+questSec.addEventListener("click", handleoptionclick);
+main.append(questSec)
+
+
+
 console.log(Timervalue)
-            
+          
 }
 
+
+
+function handleoptionclick(event) {
+  // console.log("clciked someher in sec")
+  const target = event.target;
+    
+   if(target.tagName === "LI"){
+     const value = target.getAttribute("data-value"); 
+     console.log(value)   
+    if (questionIndex < questions.length - 1){
+       questionIndex +=1;
+       document.getElementById("questionCon").remove();
+       renderQuestionSection();
+ 
+   } else{
+    document.getElementById("questionCon").remove();
+   // reder submission
+   }}
+};
 
 
 
