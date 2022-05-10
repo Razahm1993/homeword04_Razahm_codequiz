@@ -114,6 +114,30 @@ align-items:center;
     font-weight:bolder;  
   }
 
+ .gameoverBox{
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+   justify-items: center;
+ }
+ .gameoverButton{
+  padding: 0.8em 3em;
+  color: blanchedalmond;
+  background: #111;
+  border-radius: 25px;
+  font-size: medium; 
+  border: 8px solid green;  
+}
+.gameoverButton:hover{
+  color: black;
+  background: green;
+  border: 8px solid blanchedalmond; 
+  font-weight:bolder;  
+}
+.gameoverhead{
+font-size: xx-large;
+}
 
 
 

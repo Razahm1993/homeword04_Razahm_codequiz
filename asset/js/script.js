@@ -1,5 +1,5 @@
 let questionIndex = 0
-
+var timeInterval = null
 
 const questions = [
     {
@@ -38,7 +38,7 @@ const questions = [
 const main = document.getElementById("main")
 const intro = document.getElementById("Question-section")
 const startButton = document.getElementById("startButton")
-var Timervalue = 60
+var Timervalue = 10
 
 startButton.addEventListener("click",startGame)
 
@@ -49,8 +49,37 @@ function startGame(){
     renderQuestionSection();
     
 }
+
+function gameOver(){
+
+  const quest = document.getElementById("questionCon")
+  quest.remove();
+
+
+   const gameOverbox = document.createElement("section");
+  gameOverbox.setAttribute("class", "gameoverBox");
+
+  const goHead = document.createElement("h1");
+ goHead.setAttribute("class", "gameoverhead");
+ goHead.textContent = ("Game Over");
+
+ const goText = document.createElement("p");
+ goText.setAttribute("class", "gameoverText");
+ goText.textContent = ("You ran out of time");
+
+ const goButton = document.createElement("button");
+ goButton.setAttribute("class", "gameoverButton");
+ goButton.textContent = ("Try again");
+
+ gameOverbox.append(goHead,goText,goButton);
+
+main.append(gameOverbox)
+  
+  
+
+}
 function startTimer() {
-  var timeInterval = setInterval(function () {
+   timeInterval = setInterval(function () {
     if (Timervalue > 0) {
       console.log (Timervalue + ' seconds remaining');
       Timervalue--;
@@ -59,8 +88,11 @@ function startTimer() {
       
     }
         else {
-    console.log("game Over") 
+    
    clearInterval(timeInterval);
+   gameOver();
+
+
   }
 
   }, 1000);
@@ -150,6 +182,11 @@ function handleoptionclick(event) {
        questionIndex +=1;
        document.getElementById("questionCon").remove();
        renderQuestionSection();
+    if (questionIndex === questions.length -1){
+      console.log(Timervalue)
+      clearInterval(timeInterval);
+    }
+
  
    } else{
     document.getElementById("questionCon").remove();
